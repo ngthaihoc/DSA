@@ -4,13 +4,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Solution sol = new Solution();
-
-        int[] nums = {2, 7, 11, 15};
-        int target = 9;
-
-        int[] result = sol.twoSum(nums, target);
-        System.out.println(Arrays.toString(result));
+       int n = 7 / 10;
+        System.out.println(Integer.toString(n));
     }
 }
 
