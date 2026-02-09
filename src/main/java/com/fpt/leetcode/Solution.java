@@ -75,4 +75,28 @@ class Solution {
         else return arr[ arr.length / 2 ];
     }
 
+
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        if (s.length() == 1) {
+            return s;
+        }
+        char[] arr = s.toCharArray();
+        String sub = "";
+        int temp = 0;
+        while (temp < arr.length) {
+
+            for (int i = temp + 1; i < s.length(); i++) {
+                if (arr[temp] == arr[i] && arr[temp + 1] == arr[i - 1]) {
+                    sub = s.substring(temp, i + 1);
+                }
+            }
+
+            temp++;
+        }
+        return sub;
+    }
+
 }
