@@ -77,26 +77,41 @@ class Solution {
 
 
     public static String longestPalindrome(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.length() == 0)
             return "";
-        }
-        if (s.length() == 1) {
-            return s;
-        }
-        char[] arr = s.toCharArray();
-        String sub = "";
-        int temp = 0;
-        while (temp < arr.length) {
 
-            for (int i = temp + 1; i < s.length(); i++) {
-                if (arr[temp] == arr[i] && arr[temp + 1] == arr[i - 1]) {
+        String sub = "";
+
+        for (int temp = 0; temp < s.length(); temp++) {
+            for (int i = temp; i < s.length(); i++) {
+                boolean tempCheck = true;
+                int left = temp;
+                int right = i;
+                while (left < right) {
+                    if (s.charAt(left) != s.charAt(right)) {
+                        tempCheck = false;
+                        break;
+                    }
+                    left++;
+                    right--;
+                }
+
+                if (tempCheck && (i - temp + 1 > sub.length())) {
                     sub = s.substring(temp, i + 1);
                 }
             }
-
-            temp++;
         }
+
         return sub;
     }
 
+
+
+
+
 }
+
+
+
+
+
