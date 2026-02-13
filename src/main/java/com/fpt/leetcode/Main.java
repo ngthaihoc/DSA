@@ -9,7 +9,7 @@ public class Main {
 
         String result = Solution.longestPalindrome(input);
 
-        System.out.println("Chuỗi palindrome dài nhất: " + result);
+        System.out.println("result : " + result);
 
     }
 }
