@@ -40,7 +40,7 @@ class Solution {
 //    }
 
 
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
         int maxlong = 0;
         int l = 0;
@@ -59,7 +59,7 @@ class Solution {
     }
 
 
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         double[] arr = new double[nums1.length + nums2.length];
         int j = 0;
 
@@ -103,6 +103,33 @@ class Solution {
         }
 
         return sub;
+    }
+
+
+
+    public static String convert(String s, int numRows) {
+        if (numRows == 1 || s.length() <= numRows) return  s;
+
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for (int i = 0; i < numRows; i++) {
+            rows[i] = new StringBuilder();
+        }
+        int curr = 0;
+        Boolean goDown = false;
+        for (int i = 0 ; i < s.length() ; i ++){
+            rows[curr].append(s.charAt(i));
+            if (curr == 0 || curr == numRows - 1){
+                goDown = !goDown;
+            }
+            curr += goDown ? 1 : -1;
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < numRows; i++) {
+            result.append(rows[i]);
+        }
+
+        return result.toString();
+
     }
 
 
