@@ -5,9 +5,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        int data = 3;
+        String data = "39482948324-344";
 
-        String result = String.valueOf(Solution.reverse( data));
+        String result = String.valueOf(Solution.myAtoi(data));
 
         System.out.println("result : " + result);
 
