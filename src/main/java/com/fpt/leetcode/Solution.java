@@ -133,6 +133,27 @@ class Solution {
     }
 
 
+    public static int reverse(int x) {
+        int res = 0, last;
+        while (x != 0) {
+
+            last = x % 10;
+
+            x /= 10;
+
+            if (Math.abs(res) > Integer.MAX_VALUE / 10) return 0;
+
+            if (res == Integer.MAX_VALUE / 10 && last > 7) return 0;
+
+            if (res == Integer.MIN_VALUE / 10 && last < -8) return 0;
+
+
+            res = res * 10 + last;
+        }
+        return res;
+    }
+
+
 
 
 

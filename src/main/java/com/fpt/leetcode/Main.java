@@ -5,10 +5,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        String input = "PAYPALISHIRING";
         int data = 3;
 
-        String result = Solution.convert(input, data);
+        String result = String.valueOf(Solution.reverse( data));
 
         System.out.println("result : " + result);
 
