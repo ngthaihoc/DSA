@@ -5,9 +5,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        String data = "39482948324-344";
+        int data = 10;
+//        int data = -121;
 
-        String result = String.valueOf(Solution.myAtoi(data));
+        String result = String.valueOf(Solution.isPalindrome(data));
 
         System.out.println("result : " + result);
 
