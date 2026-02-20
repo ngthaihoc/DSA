@@ -197,6 +197,21 @@ class Solution {
         return x == reversed || x == reversed / 10;
     }
 
+
+
+    public static int maxArea(int[] height) {
+        int start = 0, max = 0, end = height.length - 1;
+        while (start < end) {
+            int h = Math.min(height[start], height[end]);
+            max = Math.max(max, h * (end - start));
+            if (height[end] < height[start]) {
+                end--;
+            } else
+                start++;
+        }
+        return max;
+    }
+
 }
 
 

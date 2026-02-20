@@ -5,10 +5,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        int data = 10;
-//        int data = -121;
+        int[] height  = {1,8,6,2,5,4,8,3,7} ;
 
-        String result = String.valueOf(Solution.isPalindrome(data));
+        int result = Solution.maxArea(height);
 
         System.out.println("result : " + result);
 
